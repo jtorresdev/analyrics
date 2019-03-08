@@ -14,9 +14,14 @@ app.post('/getlyrics', function(req, res) {
 	const name = req.body.name;
 	const artist = req.body.artist;
 	const pythonProcess = spawn('python', [ 'genius.py', name, artist ]);
+	let response = [];
 	pythonProcess.stdout.on('data', (data) => {
-		res.send(data);
+		console.log(data)
+		response.push(data);
 	});
+	if (response.length >= 3) {
+		res.send(response);
+	}
 });
 
 app.get('/', (req, res) => {
