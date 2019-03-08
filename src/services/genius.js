@@ -17,7 +17,7 @@ export const getLyrics = async (name, artist) => {
 	var sentiment = new Sentiment();
 	return axios
 		.post(
-			`http://localhost:4000/getlyrics`,
+			`/getlyrics`,
 			{ name, artist },
 			{
 				headers: {
