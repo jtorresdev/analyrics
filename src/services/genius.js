@@ -26,7 +26,7 @@ export const getLyrics = async (name, artist) => {
 			}
 		)
 		.then((res) => {
-			const lyrics = res.data.split('\n').slice(2).join('\n')
+			const lyrics = res.data
 			var analysis = sentiment.analyze(lyrics); 
 			return {lyrics, analysis};
 		})
