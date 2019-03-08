@@ -16,8 +16,8 @@ app.post('/getlyrics', function(req, res) {
 	const pythonProcess = spawn('python', [ 'genius.py', name, artist ]);
 	let response = [];
 	pythonProcess.stdout.on('data', (data) => {
-		console.log(data.toString('utf8'))
-		response.push(data);
+		response.push(data.toString('utf8'));
+		console.log(response)
 	});
 	if (response.length >= 3) {
 		res.send(response);
