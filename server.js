@@ -14,6 +14,10 @@ app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
+app.get('/algo', function(req, res){
+    res.send('algo')
+})
+
 app.post('/getlyrics', function (req, res) {
     const name = req.body.name
     const artist = req.body.artist
